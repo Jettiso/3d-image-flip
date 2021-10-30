@@ -1,0 +1,42 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #161616;
+}
+img {
+    width: 100%; 
+    height: 100%;
+}
+.box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.box img {
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.box img:nth-child(2) {
+    transform: rotateY(180deg);
+}
+
+.box:hover img:nth-child(2) {
+    transform: rotateY(0deg);
+} 
+
+.box:hover img:nth-child(1) {
+    transform: rotateY(-180deg);
+} 
